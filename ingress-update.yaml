@@ -1,0 +1,9 @@
+﻿apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mern-ingress
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "mern-app-ip"
+    networking.gke.io/managed-certificates: "mern-cert"
+    networking.gke.io/v1beta1.FrontendConfig: "mern-frontend-config"
