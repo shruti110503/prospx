@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+  - ../base
+patchesStrategicMerge:
+  - client-configmap.yaml
+  - server-configmap.yaml
+images:
+  - name: gcr.io/cs-poc-alax5vq9yuwvzv0imv8i5ks/mern-client
+    newName: gcr.io/cs-poc-alax5vq9yuwvzv0imv8i5ks/mern-client
+    newTag: development
+  - name: gcr.io/cs-poc-alax5vq9yuwvzv0imv8i5ks/mern-server
+    newName: gcr.io/cs-poc-alax5vq9yuwvzv0imv8i5ks/mern-server
+    newTag: development

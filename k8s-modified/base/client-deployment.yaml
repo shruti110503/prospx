@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client
+  labels:
+    app: client
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+      - name: client
+        image: gcr.io/cs-poc-alax5vq9yuwvzv0imv8i5ks/mern-client:production
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: client-config
+        - secretRef:
+            name: client-secret
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"

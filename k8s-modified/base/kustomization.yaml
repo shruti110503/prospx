@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - client-deployment.yaml
+  - server-deployment.yaml
+  - client-service.yaml
+  - server-service.yaml
+  - ingress.yaml
+  - client-configmap.yaml
+  - server-configmap.yaml
+  - backend-config.yaml
+  - frontend-config.yaml
+  # Remove these lines:
+  # - client-secret.yaml
+  # - server-secret.yaml

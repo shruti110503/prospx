@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: server-config
+data:
+  NODE_ENV: "production"
+  LINKEDIN_REDIRECT_URI: "https://prospx.io/check-auth"

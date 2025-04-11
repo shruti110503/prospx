@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: client-config
+data:
+  NODE_ENV: "production"
+  VITE_URL: "https://api.prospx.io"
+  VITE_LINKEDIN_REDIRECT_URI: "https://prospx.io/check-auth"
+  VITE_GOOGLE_REDIRECT_URI: "https://prospx.io/check-auth"
